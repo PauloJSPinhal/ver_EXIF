@@ -1,23 +1,23 @@
 # Ver EXIF
 
-Visualizador EXIF com interface gráfica nativa (GTK3) para imagens, integrado ao Nautilus.
+Visualizador EXIF completo com interface gráfica nativa (GTK3) para imagens, integrado ao Nautilus.
 
 ## Descrição
 
-Este script permite visualizar os metadados EXIF de imagens através de uma interface gráfica GTK3. Ele é projetado para ser usado como script do Nautilus no ambiente GNOME, herdando automaticamente as variáveis de ambiente do sistema (GTK_THEME, GSETTINGS_BACKEND, DBUS_SESSION_BUS_ADDRESS, etc.).
+Este script permite visualizar os metadados EXIF de imagens através de uma interface gráfica GTK3 avançada. Ele é projetado para ser usado como script do Nautilus no ambiente GNOME, herdando automaticamente as variáveis de ambiente do sistema (GTK_THEME, GSETTINGS_BACKEND, DBUS_SESSION_BUS_ADDRESS, etc.).
 
 ## Requisitos
 
 - Python 3
 - GTK3 (via gi.repository)
-- Pillow (PIL)
+- `exiftool` (libimage-exiftool-perl)
 - Nautilus (GNOME Files)
 
 ## Instalação
 
-1. Certifique-se de ter os pacotes necessários instalados:
+1. Instale o `exiftool` (necessário para leitura completa de metadados):
    ```bash
-   sudo apt install python3-gi python3-pil
+   sudo apt install libimage-exiftool-perl
    ```
 
 2. Copie o arquivo `ver-exif.py` para a pasta de scripts do Nautilus:
@@ -37,15 +37,15 @@ Este script permite visualizar os metadados EXIF de imagens através de uma inte
 
 ## Funcionalidades
 
-- Visualização organizada dos metadados EXIF por categorias:
-  - Câmera/Equipamento
-  - Configurações de Imagem
-  - Data e Hora
-  - GPS/Localização
-  - Exposição/Disparo
-  - Outros/Metadados
-- Formatação automática de valores (tempo de exposição, abertura, focalização, etc.)
-- Suporte a coordenadas GPS
+- **Visualização estruturada** dos metadados com categorias e sub-categorias:
+  - 📷 EXIF Padrão, MakerNotes, XMP, IPTC, Composite, File, GPS, ICC
+  - Sub-categorias inteligentes (Ex: "📷 Corpo & Fabricante", "⚡ Exposição & Disparo", etc.)
+- **Busca em tempo real** para filtrar tags, valores e sub-categorias
+- **Exportação** para JSON ou CSV
+- **Menu de contexto** para copiar valores individuais
+- **Expandir/recolher** toda a árvore de metadados
+- Suporte a metadados complexos (MakerNotes, XMP, IPTC, ICC Profile)
+- Formatação automática de valores e truncamento para valores longos
 
 ## Licença
 
