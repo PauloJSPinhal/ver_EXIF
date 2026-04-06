@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.0] - 2026-04-07
+
+- **Nova funcionalidade**: Sistema de favoritos com persistência em `~/.config/ver-exif/favorites.json`
+- **Nova funcionalidade**: Dicionário personalizável `tag-dictionary.json` para descrições e categorias
+- **Nova funcionalidade**: Tooltips com descrições das tags ao passar o mouse
+- **Nova funcionalidade**: Exportação CSV inclui coluna de favoritos
+- **Nova funcionalidade**: Exportação JSON inclui indicação de favoritos
+- **Melhoria**: Interface aumentada (940x700) para melhor visualização
+- **Melhoria**: Deduplicação de tags por nome (case-insensitive)
+- **Melhoria**: Organização em categorias com estrutura TreeStore
+- **Melhoria**: Contador de favoritos no rodapé da interface
+
 ## [0.2.0] - 2026-04-06
 
 - **Nova funcionalidade**: Suporte completo ao `exiftool` para leitura de metadados avançados

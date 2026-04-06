@@ -2,6 +2,31 @@
 
 Visualizador EXIF completo com interface gráfica nativa (GTK3) para imagens, integrado ao Nautilus.
 
+## 📂 Estrutura de Configuração
+
+O script utiliza uma pasta de configuração em `~/.config/ver-exif/` para armazenar:
+- `tag-dictionary.json` - Dicionário personalizado com descrições e categorias das tags
+- `favorites.json` - Lista de metadados favoritos
+
+### Como salvar a pasta `ver-exif` em `.config`
+
+Para copiar a pasta de configuração para o diretório correto:
+
+```bash
+# Copiar a pasta ver-exif para ~/.config/
+cp -r ver-exif ~/.config/
+
+# Ou se estiver no diretório atual:
+mv ver-exif ~/.config/
+```
+
+A estrutura final deve estar em:
+```
+~/.config/ver-exif/
+├── tag-dictionary.json
+└── favorites.json
+```
+
 ## Descrição
 
 Este script permite visualizar os metadados EXIF de imagens através de uma interface gráfica GTK3 avançada. Ele é projetado para ser usado como script do Nautilus no ambiente GNOME, herdando automaticamente as variáveis de ambiente do sistema (GTK_THEME, GSETTINGS_BACKEND, DBUS_SESSION_BUS_ADDRESS, etc.).
@@ -40,12 +65,15 @@ Este script permite visualizar os metadados EXIF de imagens através de uma inte
 - **Visualização estruturada** dos metadados com categorias e sub-categorias:
   - 📷 EXIF Padrão, MakerNotes, XMP, IPTC, Composite, File, GPS, ICC
   - Sub-categorias inteligentes (Ex: "📷 Corpo & Fabricante", "⚡ Exposição & Disparo", etc.)
-- **Busca em tempo real** para filtrar tags, valores e sub-categorias
-- **Exportação** para JSON ou CSV
-- **Menu de contexto** para copiar valores individuais
+- **Busca em tempo real** para filtrar tags, valores e categorias
+- **Exportação** para JSON ou CSV (com indicação de favoritos)
+- **Menu de contexto** para adicionar/remover metadados dos favoritos
 - **Expandir/recolher** toda a árvore de metadados
+- **Dicionário personalizável** (`tag-dictionary.json`) para descrições e categorias
+- **Sistema de favoritos** para marcar tags importantes
 - Suporte a metadados complexos (MakerNotes, XMP, IPTC, ICC Profile)
 - Formatação automática de valores e truncamento para valores longos
+- Tooltips com descrições das tags
 
 ## Licença
 
